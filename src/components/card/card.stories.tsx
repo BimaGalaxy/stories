@@ -4,7 +4,7 @@ import React from 'react';
 
 // This tells Storybook how to list your stories and provide information
 export default {
-    title: 'Atoms/Card',
+    title: 'Molecule/Card',
     component: Card,
     argTypes: {
         variant: { control: 'select' }

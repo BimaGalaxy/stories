@@ -1,0 +1,29 @@
+/* Variant */
+.storybook-button-primary {
+    @apply bg-blue-400 hover:bg-blue-500 text-white;
+  }
+  
+  .storybook-button-success {
+    @apply bg-green-400 hover:bg-green-500 text-white;
+  } 
+  
+  .storybook-button-warning {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-black;
+  }
+  
+  .storybook-button-danger {
+    @apply bg-red-400 hover:bg-red-500 text-white;
+  }
+  
+  /* Size */
+  .storybook-button-small {
+    @apply text-sm py-2.5 px-4;
+  }
+  
+  .storybook-button-medium {
+    @apply text-base py-3 px-5;
+  }
+  
+  .storybook-button-large {
+    @apply text-lg py-4 px-6;
+  }

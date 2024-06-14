@@ -1,25 +1,60 @@
 import React from 'react';
 import { StoryObj, Meta } from '@storybook/react';
-import { Toast, ToastProps } from './toast';
+import { Toast } from './toast';
 
-export default {
-  title: 'Atoms/Toast',
+const meta = {
+  title: "Molecule/Toast",
   component: Toast,
-  argTypes: {
-    type: { control: 'select' }
-  }
-} as Meta;
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof Toast>;
 
-export const Information: StoryObj<ToastProps> = (args: React.JSX.IntrinsicAttributes & ToastProps) => <Toast {...args} />;
-// Define default arguments for the Default StoryObj
-Information.args = {
-    type: 'information',
-    message: "Change message"
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    size: 'medium',
+    variant: "default",
+    label: 'Change label',
+    message: 'Change message'
+  },
 };
 
-export const Notification: StoryObj<ToastProps> = (args: React.JSX.IntrinsicAttributes & ToastProps) => <Toast {...args} />;
-// Define default arguments for the Default StoryObj
-Notification.args = {
-    type: 'notification',
-    message: "Change Notification"
+export const Success: Story = {
+  args: {
+    size: 'medium',
+    variant: "success",
+    label: 'Change label',
+    message: 'Change message'
+  },
 };
+
+export const Danger: Story = {
+  args: {
+    size: 'medium',
+    variant: "danger",
+    label: 'Change label',
+    message: 'Change message'
+  },
+};
+
+export const Notification: Story = {
+  args: {
+    size: 'medium',
+    variant: "notification",
+    label: 'Change label',
+    message: 'Change Notification'
+  },
+};
+
+
+// export const Information: StoryObj<ToastProps> = (args: React.JSX.IntrinsicAttributes & ToastProps) => <Toast {...args} />;
+// // Define default arguments for the Default StoryObj
+// Information.args = {
+//     type: 'information',
+//     label: "Change label",
+//     message: "Change message"
+// };
