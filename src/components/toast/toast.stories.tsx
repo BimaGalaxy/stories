@@ -1,12 +1,44 @@
 import React from 'react';
 import { StoryObj, Meta } from '@storybook/react';
 import { Toast } from './toast';
+import { fn } from "@storybook/test";
 
 const meta = {
   title: "Molecule/Toast",
   component: Toast,
   parameters: {
     layout: "centered",
+  },
+  argTypes: {
+    color: {
+      control: {
+        type: "select",
+      },
+      options: ['success', 'danger', 'default'],
+      description: "Color",
+    },
+    size: {
+      control: {
+        type: "select",
+
+      },
+      options: ['medium', 'large'],
+      description: "Size",
+    },
+    variant: {
+      control: {
+        type: "select",
+
+      },
+      options: ['default','success','danger','notification'],
+      description: "Variant of the alert",
+    },
+  },
+  args: {
+    color: "default",
+    variant: "default",
+    size: "medium",
+    onClick: fn(),
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Toast>;
@@ -49,12 +81,3 @@ export const Notification: Story = {
     message: 'Change Notification'
   },
 };
-
-
-// export const Information: StoryObj<ToastProps> = (args: React.JSX.IntrinsicAttributes & ToastProps) => <Toast {...args} />;
-// // Define default arguments for the Default StoryObj
-// Information.args = {
-//     type: 'information',
-//     label: "Change label",
-//     message: "Change message"
-// };
